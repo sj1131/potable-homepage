@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="menu">
+    <button id="new_file" onclick="new_file()"><i class="fa fa-plus"></i>New</button>
+</div>
+<div class="list_container">
+    {% for file in files %}
+    <div class="list_item row">
+        <div class="col-md-12">
+            <i class="fa-regular fa-file"></i>
+            <a href="{{ url_for('get_file', filename=file.name) }}">{{ file.name }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function new_file() { window.location.href = "{{ url_for('get_file', filename='new_file') }}"}
+</script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/pell/pell.min.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='/pell/pell.min.js') }}"></script>
+
+<div id="data" style="display: none;">{{ file.data | safe }}</div>
+<p id="pell"></p>
+<script type="text/javascript" src="{{ url_for('static', filename='editor.js') }}"></script>
+<script>
+    let filename = document.createElement('input')
+    filename.id = 'filename'
+    filename.type = 'text'
+    filename.value = '{{ file.filename }}'
+    document.getElementsByClassName('pell-actionbar')[0].appendChild(filename)
+
+    const saveURL = '{{ url_for("save_file", filename=file.filename) }}'
+</script>
+{% endblock %}

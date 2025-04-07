@@ -1,0 +1,43 @@
+.to-home, .to-home:hover, .to-home:focus {
+    color: black !important;
+    text-decoration: none !important;
+}
+.wrapper {
+    width: 800px;
+    height: 95vh;
+    margin: auto;
+}
+#new_file {
+    float: right;
+    width: 60px;
+    text-align: left;
+    background-color: lightgreen;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    color: black;
+    margin: 5px;
+}
+#new_file > svg {
+    margin-right: 5px;
+}
+.list_container {
+    clear: both;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.list_container > div:last-child {
+    border: none;
+}
+.list_item {
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+    transition: all 0.3s;
+}
+.list_item:hover {
+    background-color: #0000001a;
+}
+.list_item > div > a {
+    margin-left: 10px;
+}
