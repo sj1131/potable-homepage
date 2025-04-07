@@ -1,19 +1,51 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/pell/pell.min.css') }}">
-<script type="text/javascript" src="{{ url_for('static', filename='/pell/pell.min.js') }}"></script>
+
+<!-- Core  include only Paragraph block -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<!-- Header Plug-in-->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+<!-- Link embeds-->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@2.5.0/dist/bundle.min.js"></script>
+<!-- Raw Html -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/raw@2.4.0/dist/bundle.min.js"></script>
+<!-- Simple Image -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@1.5.1/dist/bundle.min.js"></script>
+<!-- Image -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.8.1/dist/bundle.min.js"></script>
+<!-- CheckList -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+<!-- List -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+<!-- Embed -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+<!-- Quote -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@2.5.0/dist/bundle.min.js"></script>
+<!-- Table -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@2.2.1/dist/table.min.js"></script>
+<!-- Nested List -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/nested-list@latest"></script>
+<!-- Delimiter -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@1.3.0/dist/bundle.min.js"></script>
+<!-- Warning -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script>
+<!-- Code -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@2.8.0/dist/bundle.min.js"></script>
+<!--  Attach -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/attaches@latest"></script>
+<!-- Marker-->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
+<!-- Inline Code -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@1.4.0/dist/bundle.min.js"></script>
+<!-- UnderLine -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
+<!-- Alert -->
+<script src="https://cdn.jsdelivr.net/npm/editorjs-alert@latest"></script>
 
 <div id="data" style="display: none;">{{ file.data | safe }}</div>
-<p id="pell"></p>
-<script type="text/javascript" src="{{ url_for('static', filename='editor.js') }}"></script>
-<script>
-    let filename = document.createElement('input')
-    filename.id = 'filename'
-    filename.type = 'text'
-    filename.value = '{{ file.filename }}'
-    document.getElementsByClassName('pell-actionbar')[0].appendChild(filename)
+<div id="editorjs"></div>
 
-    const saveURL = '{{ url_for("save_file", filename=file.filename) }}'
-</script>
+<script type="text/javascript" src="{{ url_for('static', filename='edit.js') }}"></script>
+
 {% endblock %}

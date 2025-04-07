@@ -41,3 +41,11 @@
 .list_item > div > a {
     margin-left: 10px;
 }
+#editor-form {
+    border: 1px solid #ccc;
+}
+#editorjs {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 80vh;
+}
